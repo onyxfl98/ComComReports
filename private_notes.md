@@ -16,7 +16,7 @@ if filename[m1,m1+2] == filename[m1+9,m1+11] and filename[m1+4,m1+8] == filename
 
 ### First
 
-- [ ] Ask for for folder
+- [x] Ask for for folder
 - [ ] Show all text files in a list
 - [ ] Ask for start date
 - [ ] Parse lines and display only
