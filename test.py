@@ -2,7 +2,7 @@
 
 """Used as the main module for testing purposes"""
 
-from get_folder import get_folder 
+from get_folder import get_folder
 from icecream import install, ic
 
 install()
@@ -14,6 +14,7 @@ def main():
     report_folder = get_folder()
     ic(report_folder)
 
+    
 
 if __name__ == "__main__":
     main()

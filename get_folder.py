@@ -2,29 +2,25 @@
 
 """Select folder containing reports"""
 
-from pathlib import Path
+from tkinter import filedialog, Tk
 
 def get_folder() -> str:
     """Ask the user for a directory and validate"""
 
-    #Future - browse
+    root = Tk()
+    root.withdraw()  # Hide the main window
 
-    user_folder_name = input("Enter folder name for report files: ")
+    folder_selected = ()
 
-    path_folder = Path(user_folder_name)
+    while not isinstance(folder_selected, str):
+        folder_selected = filedialog.askdirectory(title="Please select folder")
 
-    ic(path_folder)
+        ic(folder_selected)
 
-    if path_folder.exists() and path_folder.is_dir():
-        print(str(path_folder) + " is a valid folder")
-        print(str(list(path_folder.glob('*.txt'))))
+        if not isinstance(folder_selected, str):
+            print("Selection cancelled please try again")
 
-        return str(path_folder)
-    
-    else:
-        print(str(path_folder) + " isn't a valid folder")
-        return ""
-
+    return folder_selected
 
 def main():
     """Main function executed when this module is directly run"""
