@@ -4,6 +4,7 @@
 
 from icecream import install, ic
 from get_folder import get_folder
+from combine_files import combine_text_files
 
 install()
 
@@ -14,9 +15,11 @@ def main():
     ic.disable()
 
     # Get folder path from user
-    folder_path = get_folder()
+    inbound_folder_path = get_folder()
 
-    #combine_text_files(folder_path)
+    outbound_file = "/home/onyx/ReportsTest/combined_files.txt"
+
+    contents_list = combine_text_files(inbound_folder_path,outbound_file)
 
 
 if __name__ == "__main__":

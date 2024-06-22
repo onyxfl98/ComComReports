@@ -18,7 +18,7 @@ def combine_text_files(folder, output_filename="combined.txt"):
         if filename.endswith(".txt"):
             file_path = os.path.join(folder, filename)
             # Read the content of the text file
-            with open(file_path, "r", encoding="utf-8") as file:
+            with open(file_path, "r", encoding="us-ascii") as file:
                 content = file.read()
                 # Add content with a separator (optional)
                 combined_text += (
@@ -26,7 +26,7 @@ def combine_text_files(folder, output_filename="combined.txt"):
                 )  # Add newline separators between files
 
     # Write the combined text to a new file
-    with open(os.path.join(folder, output_filename), "w", encoding="utf-8") as output_file:
+    with open(os.path.join(folder, output_filename), "w", encoding="us-ascii") as output_file:
         output_file.write(combined_text)
     print(f"Successfully combined text files into '{output_filename}'")
 
